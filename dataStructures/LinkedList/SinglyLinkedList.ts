@@ -61,4 +61,16 @@ export class SinglyLinkedList<T> {
     }
     return false;
   }
+
+  reverse(): void {
+    let prev: LinkNode<T> | null = null;
+    let cur = this.head;
+    let next: LinkNode<T> | null = null;
+    while (cur) {
+      next = cur.next;
+      cur.next = prev;
+      prev = cur;
+      cur = next;
+    }
+  }
 }

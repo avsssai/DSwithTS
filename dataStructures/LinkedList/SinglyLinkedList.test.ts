@@ -41,4 +41,15 @@ describe("tests the singly linked list", () => {
     expect(linkedList.traverse()).toStrictEqual([1, 2]);
     expect(linkedList.size).toBe(2);
   });
+  test("reversing a single linked list", () => {
+    let linkedList = new SinglyLinkedList();
+    linkedList.insert(1);
+    linkedList.insert(2);
+    linkedList.insert(3);
+    linkedList.insert(4);
+    linkedList.insert(5);
+    expect(linkedList.traverse()).toStrictEqual([1, 2, 3, 4, 5]);
+    linkedList.reverse();
+    expect(linkedList.traverse()).toStrictEqual([5, 4, 3, 2, 1]);
+  });
 });
